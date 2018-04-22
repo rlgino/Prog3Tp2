@@ -23,7 +23,7 @@ public class Grafo {
 		this._cantidadVertices = _cantidadVertices;
 	}
 
-	public void insertarVecino(int key, int val) {
+	public void agregarArista(int key, int val) {
 		verificarIndice(key);
 		verificarIndice(val);
 		if (!isVecino(key, val))

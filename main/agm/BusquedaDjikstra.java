@@ -1,4 +1,4 @@
-package estructura;
+package agm;
 
 public class BusquedaDjikstra {
 
