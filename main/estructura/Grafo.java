@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Grafo {
+	
 	private int _cantidadVertices;
 	private ArrayList<HashSet<Integer>> vecinos;
 
@@ -22,12 +23,24 @@ public class Grafo {
 		this._cantidadVertices = _cantidadVertices;
 	}
 
-	public ArrayList<HashSet<Integer>> getVecinos() {
-		return vecinos;
+	public void insertarVecino(int key, int val) {
+		verificarIndice(key);
+		verificarIndice(val);
+		if (!isVecino(key, val))
+			vecinos.get(key).add(val);
 	}
 
-	public void setVecinos(ArrayList<HashSet<Integer>> vecinos) {
-		this.vecinos = vecinos;
+	public boolean isVecino(int key, int val) {
+		verificarIndice(key);
+		verificarIndice(val);
+		return vecinos.get(key).contains(val);
 	}
 
+	private boolean verificarIndice(int val) {
+		if (val < 0)
+			throw new RuntimeException("El valor " + val + " no puede ser negativo");
+		if (val < _cantidadVertices)
+			throw new RuntimeException("El valor " + val + " no puede ser mayor a la cantidad de vertices");
+		return true;
+	}
 }
