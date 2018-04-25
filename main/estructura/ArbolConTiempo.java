@@ -26,4 +26,3 @@ public class ArbolConTiempo extends Grafo {
 		return _tiempos[i][j];
 	}
 }
-
