@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import agm.Dijkstra;
-import agm.Prim;
 import estructura.ArbolConTiempo;
 import modelo.PuntoInteres;
 
