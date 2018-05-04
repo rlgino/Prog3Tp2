@@ -41,6 +41,11 @@ public class Main {
 			System.out.println("Desea ingresar otro camino?:\n");
 			resp = new Scanner(System.in).nextLine();
 		}
+		
+
+		System.out.println("Ingrese el punto A del camino:\n");
+		String minaA = new Scanner(System.in).nextLine();
+		System.out.println(controlador.recorrer(controlador.getMina(minaA).getId()));
 	}
 
 }

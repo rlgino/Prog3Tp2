@@ -3,6 +3,8 @@ package controlador;
 import java.util.ArrayList;
 import java.util.List;
 
+import agm.Dijkstra;
+import agm.Prim;
 import estructura.ArbolConTiempo;
 import modelo.PuntoInteres;
 
@@ -21,7 +23,7 @@ public class Controlador {
 		arbol.agregarArista(minaA.getId(), minaB.getId(), tiempo);
 	}
 
-	public void agregarMina(int id, String nombre, int cantCarbon) {
+	public void agregarMina(int id, String nombre, double cantCarbon) {
 		PuntoInteres pi = new PuntoInteres(id, nombre, cantCarbon);
 		listaMinas.add(pi);
 	}
@@ -46,6 +48,16 @@ public class Controlador {
 		PuntoInteres puntoInteresB = getMina(minaB);
 		agregarArista(puntoInteresA, puntoInteresB, tiempo);
 
+	}
+	
+	public String recorrer(int ini){
+		ArbolConTiempo agm = Dijkstra.resolver(arbol, ini);
+		StringBuilder sb = new StringBuilder();
+		for(int x = 0; x<agm.aristas() ; x++)
+			for(int y = 0; y<agm.aristas() ; y++)
+				if(agm.existeArista(x, y))
+					sb.append(x).append("---").append(agm.peso(x, y)).append("--->").append(y);
+		return (sb.toString());
 	}
 
 }

@@ -15,6 +15,7 @@ public class ArbolConTiempo extends Grafo {
 	public void agregarArista(int i, int j, double tiempo)
 	{
 		isVecino(i, j);
+		super.agregarArista(i, j);
 
 		_tiempos[i][j] = tiempo;
 		_tiempos[j][i] = tiempo;
@@ -24,5 +25,13 @@ public class ArbolConTiempo extends Grafo {
 	{
 		isVecino(i, j);
 		return _tiempos[i][j];
+	}
+
+	public int vertices() {
+		return super.getCantidadVertices();
+	}
+
+	public boolean existeArista(int i, int j) {
+		return super.isVecino(i, j);
 	}
 }

@@ -3,9 +3,9 @@ package modelo;
 public class PuntoInteres {
 	private int _id;
 	private String _nombre;
-	private int _cantCarbon;
+	private double _cantCarbon;
 
-	public PuntoInteres(int id, String nombre, int cantCarbon) {
+	public PuntoInteres(int id, String nombre, double cantCarbon) {
 		_id = id;
 		_nombre = nombre;
 		_cantCarbon = cantCarbon;
@@ -23,11 +23,11 @@ public class PuntoInteres {
 		this._nombre = _nombre;
 	}
 
-	public int getCantCarbon() {
+	public double getCantCarbon() {
 		return _cantCarbon;
 	}
 
-	public void setCantCarbon(int _cantCarbon) {
+	public void setCantCarbon(double _cantCarbon) {
 		this._cantCarbon = _cantCarbon;
 	}
 }
